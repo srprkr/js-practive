@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript">
+    fetch('https://jsonplaceholder.typicode.com/users', {
+      method: 'POST', // Set method here
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: 'Nathan Sebhastian',
+        email: 'ns@mail.com'
+      }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
