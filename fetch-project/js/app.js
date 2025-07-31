@@ -9,11 +9,20 @@ const render = (users) => {
 };
 
 (async () => {
+  const loadingElem = document.querySelector('#loading');
+  loadingElem.innerHTML = "Loading..."
+  // Simulate loading delay
+  
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  await delay(2000);
+
   try {
     const users = await getUsers();
     document.querySelector('#content').innerHTML = `<ul>${render(users)}</ul>`;
 
   } catch (err) {
     document.querySelector('#message').textContent = err.message;
+  } finally {
+    loadingElem.innerHTML = '';
   }
 })();
