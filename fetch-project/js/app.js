@@ -11,8 +11,8 @@ const render = (users) => {
 (async () => {
   const loadingElem = document.querySelector('#loading');
   loadingElem.innerHTML = "Loading..."
+
   // Simulate loading delay
-  
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   await delay(2000);
 
